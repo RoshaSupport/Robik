@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=no,
+      viewport-fit=cover">
+
+<meta name="theme-color" content="#111111">
+
+<title>ارتباط مستقیم</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    font-family:
+        Tahoma,
+        Arial,
+        "Segoe UI",
+        sans-serif;
+
+    background: #111;
+}
+
+body {
+    color: #111;
+    touch-action: manipulation;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.page {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+    height: 100svh;
+    height: 100dvh;
+
+    overflow: hidden;
+
+    background-color: #111;
+
+    background-image:
+        var(--random-background, none);
+
+    background-size: cover;
+
+    background-position:
+        center center;
+
+    background-repeat:
+        no-repeat;
+}
+
+
+/* =========================================================
+   MAIN INSTRUCTION
+========================================================= */
+
+.instruction {
+
+    position: absolute;
+
+    z-index: 20;
+
+    top: 3.5%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 98%;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    color: #111;
+
+    font-size:
+        clamp(
+            25px,
+            6.8vw,
+            37px
+        );
+
+    font-weight: 900;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.7px;
+
+    text-shadow:
+
+        0 1px 0
+        rgba(255,255,255,0.95),
+
+        0 2px 2px
+        rgba(255,255,255,0.55),
+
+        0 3px 7px
+        rgba(0,0,0,0.18);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTACT AREA
+========================================================= */
+
+.contact-area {
+
+    position: absolute;
+
+    z-index: 30;
+
+    top: 9.5%;
+
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: flex-start;
+
+    align-items: flex-start;
+
+    direction: ltr;
+
+    padding-left: 10.7%;
+
+    padding-right: 10%;
+
+    gap: 10vw;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTACT BUTTON
+========================================================= */
+
+.contact-button {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 36.2vw;
+
+    max-width: 170px;
+
+    height: 68px;
+
+    border-radius: 15px;
+
+    border: 1px solid
+        rgba(255,255,255,0.76);
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+
+    transform:
+        translate3d(0,0,0);
+
+    transition:
+
+        transform 80ms ease,
+
+        box-shadow 80ms ease,
+
+        filter 80ms ease,
+
+        background 120ms ease;
+
+    backdrop-filter:
+        blur(14px)
+        saturate(150%);
+
+    -webkit-backdrop-filter:
+        blur(14px)
+        saturate(150%);
+}
+
+
+/* =========================================================
+   GLASS EFFECT
+========================================================= */
+
+.contact-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 1px;
+
+    border-radius: 14px;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            145deg,
+
+            rgba(255,255,255,0.52)
+            0%,
+
+            rgba(255,255,255,0.18)
+            25%,
+
+            rgba(255,255,255,0.035)
+            58%,
+
+            rgba(0,0,0,0.16)
+            100%
+        );
+}
+
+
+/* =========================================================
+   GLASS HIGHLIGHT
+========================================================= */
+
+.contact-button::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 9%;
+
+    width: 82%;
+
+    height: 2px;
+
+    border-radius: 100%;
+
+    background:
+        rgba(255,255,255,0.82);
+
+    box-shadow:
+
+        0 1px 5px
+        rgba(255,255,255,0.42);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   COMMON MESSENGER SHADOW
+========================================================= */
+
+.messenger-button {
+
+    box-shadow:
+
+        0 14px 24px
+        rgba(0,0,0,0.34),
+
+        0 7px 10px
+        rgba(0,0,0,0.23),
+
+        inset 0 3px 3px
+        rgba(255,255,255,0.58),
+
+        inset 0 -7px 10px
+        rgba(0,0,0,0.19);
+}
+
+
+/* =========================================================
+   EITAA
+========================================================= */
+
+.messenger-eitaa {
+
+    background:
+
+        linear-gradient(
+            145deg,
+
+            rgba(255,171,75,0.97),
+
+            rgba(245,130,32,0.98)
+            48%,
+
+            rgba(211,91,9,0.99)
+        );
+}
+
+
+/* =========================================================
+   RUBIKA
+========================================================= */
+
+.messenger-rubika {
+
+    background:
+
+        linear-gradient(
+            145deg,
+
+            rgba(190,125,255,0.97),
+
+            rgba(142,68,220,0.98)
+            48%,
+
+            rgba(91,37,157,0.99)
+        );
+}
+
+
+/* =========================================================
+   TELEGRAM
+   حذف شد
+========================================================= */
+
+
+/* =========================================================
+   BALE
+========================================================= */
+
+.messenger-bale {
+
+    background:
+
+        linear-gradient(
+            145deg,
+
+            rgba(48,181,111,0.97),
+
+            rgba(20,139,78,0.98)
+            48%,
+
+            rgba(10,94,52,0.99)
+        );
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp {
+
+    background:
+
+        linear-gradient(
+            145deg,
+
+            rgba(52,232,124,0.95),
+
+            rgba(37,211,102,0.97)
+            48%,
+
+            rgba(18,166,82,0.98)
+        );
+
+    box-shadow:
+
+        0 14px 24px
+        rgba(0,0,0,0.34),
+
+        0 7px 10px
+        rgba(0,0,0,0.23),
+
+        inset 0 3px 3px
+        rgba(255,255,255,0.58),
+
+        inset 0 -7px 10px
+        rgba(0,0,0,0.19);
+}
+
+
+/* =========================================================
+   BUTTON NAME
+========================================================= */
+
+.button-name {
+
+    position: relative;
+
+    z-index: 5;
+
+    color: #fff;
+
+    font-size:
+
+        clamp(
+            22px,
+            5.9vw,
+            30px
+        );
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    text-shadow:
+
+        0 2px 2px
+        rgba(0,0,0,0.32),
+
+        0 3px 6px
+        rgba(0,0,0,0.24);
+
+    margin-bottom: 4px;
+}
+
+
+/* =========================================================
+   DIRECT CONTACT TEXT
+========================================================= */
+
+.direct-text {
+
+    position: relative;
+
+    z-index: 5;
+
+    color: #fff;
+
+    font-size:
+
+        clamp(
+            14px,
+            3.6vw,
+            18px
+        );
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    text-shadow:
+
+        0 1px 2px
+        rgba(0,0,0,0.35);
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   PRESS EFFECT
+========================================================= */
+
+.contact-button:active {
+
+    transform:
+
+        translate3d(0,5px,0)
+        scale(0.985);
+
+    filter:
+        brightness(0.92);
+
+    box-shadow:
+
+        0 4px 7px
+        rgba(0,0,0,0.30),
+
+        0 2px 3px
+        rgba(0,0,0,0.18),
+
+        inset 0 6px 10px
+        rgba(0,0,0,0.24),
+
+        inset 0 -1px 2px
+        rgba(255,255,255,0.18);
+}
+
+
+/* =========================================================
+   SMALL HEIGHT PHONES
+========================================================= */
+
+@media (max-height: 700px) {
+
+    .instruction {
+
+        top: 3%;
+
+        font-size: 22px;
+    }
+
+
+    .contact-area {
+
+        top: 9.5%;
+    }
+
+
+    .contact-button {
+
+        height: 62px;
+    }
+
+
+    .button-name {
+
+        font-size: 21px;
+
+        margin-bottom: 3px;
+    }
+
+
+    .direct-text {
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY NARROW PHONES
+========================================================= */
+
+@media (max-width: 340px) {
+
+    .instruction {
+
+        top: 3%;
+
+        font-size: 20px;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .contact-area {
+
+        top: 9.5%;
+
+        padding-left: 8%;
+
+        padding-right: 12%;
+
+        gap: 8vw;
+    }
+
+
+    .contact-button {
+
+        width: 38vw;
+
+        height: 62px;
+    }
+
+
+    .button-name {
+
+        font-size: 20px;
+    }
+
+
+    .direct-text {
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE
+========================================================= */
+
+@media (orientation: landscape) {
+
+    .instruction {
+
+        top: 2.5%;
+
+        font-size: 20px;
+    }
+
+
+    .contact-area {
+
+        top: 8%;
+    }
+
+
+    .contact-button {
+
+        height: 58px;
+    }
+
+
+    .button-name {
+
+        font-size: 20px;
+    }
+
+
+    .direct-text {
+
+        font-size: 12px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<main class="page">
+
+    <div class="instruction">
+        یکی را انتخاب کنید
+    </div>
+
+
+    <section
+        class="contact-area"
+        aria-label="انتخاب پیام‌رسان"
+    >
+
+
+        <!-- =================================================
+             RANDOM MESSENGER BUTTON
+        ================================================== -->
+
+        <a
+            id="messengerButton"
+            class="
+                contact-button
+                messenger-button
+                messenger-eitaa
+            "
+            href="javascript:void(0);"
+            aria-label="پیام‌رسان"
+        >
+
+            <span
+                id="messengerName"
+                class="button-name"
+            >
+                ایتا
+            </span>
+
+
+            <span class="direct-text">
+                ارتباط مستقیم
+            </span>
+
+        </a>
+
+
+        <!-- =================================================
+             WHATSAPP BUTTON
+        ================================================== -->
+
+        <a
+            id="whatsappButton"
+            class="contact-button whatsapp"
+            href="#"
+            aria-label="واتساپ"
+        >
+
+            <span class="button-name">
+                واتساپ
+            </span>
+
+
+            <span class="direct-text">
+                ارتباط مستقیم
+            </span>
+
+        </a>
+
+
+    </section>
+
+</main>
+
+
+<script>
+
+
+/* =========================================================
+   SMART RANDOM BACKGROUND
+   پشتیبانی از:
+
+   background.png
+   background2.png
+   background3.png
+   ...
+   background20.png
+
+   فقط فایل‌هایی که واقعاً وجود دارند
+   استفاده می‌شوند.
+========================================================= */
+
+
+/*
+   حداکثر تعداد بک‌گراند
+*/
+
+const MAX_BACKGROUND_NUMBER = 20;
+
+
+/*
+   ساخت لیست فایل‌های احتمالی
+*/
+
+const POSSIBLE_BACKGROUNDS = [];
+
+
+/*
+   فایل اول
+*/
+
+POSSIBLE_BACKGROUNDS.push(
+    "./background.png"
+);
+
+
+/*
+   فایل‌های 2 تا 20
+*/
+
+for (
+    let i = 2;
+    i <= MAX_BACKGROUND_NUMBER;
+    i++
+) {
+
+    POSSIBLE_BACKGROUNDS.push(
+        "./background" +
+        i +
+        ".png"
+    );
+
+}
+
+
+/*
+   پیدا کردن فایل‌های واقعی
+*/
+
+async function findAvailableBackgrounds() {
+
+    const available = [];
+
+
+    const checks =
+        POSSIBLE_BACKGROUNDS.map(
+            async function(file) {
+
+                try {
+
+                    const response =
+                        await fetch(
+                            file,
+                            {
+                                method: "HEAD",
+                                cache: "no-store"
+                            }
+                        );
+
+
+                    if (
+                        response.ok
+                    ) {
+
+                        available.push(
+                            file
+                        );
+
+                    }
+
+                } catch (error) {
+
+                    /*
+                       فایل وجود ندارد.
+                       نادیده گرفته می‌شود.
+                    */
+
+                }
+
+            }
+        );
+
+
+    await Promise.all(
+        checks
+    );
+
+
+    return available;
+
+}
+
+
+/*
+   انتخاب تصادفی بک‌گراند
+*/
+
+async function initializeBackground() {
+
+    const availableBackgrounds =
+        await findAvailableBackgrounds();
+
+
+    /*
+       اگر هیچ بک‌گراندی پیدا نشد،
+       صفحه مشکی باقی می‌ماند.
+    */
+
+    if (
+        availableBackgrounds.length === 0
+    ) {
+
+        return;
+
+    }
+
+
+    /*
+       انتخاب تصادفی فقط هنگام
+       بارگذاری صفحه
+    */
+
+    const randomIndex =
+        Math.floor(
+            Math.random() *
+            availableBackgrounds.length
+        );
+
+
+    const selectedBackground =
+        availableBackgrounds[
+            randomIndex
+        ];
+
+
+    /*
+       اعمال بک‌گراند
+    */
+
+    const page =
+        document.querySelector(
+            ".page"
+        );
+
+
+    page.style.setProperty(
+        "--random-background",
+        "url('" +
+        selectedBackground +
+        "')"
+    );
+
+}
+
+
+/*
+   اجرای سیستم بک‌گراند
+*/
+
+initializeBackground();
+
+
+/* =========================================================
+   RANDOM MESSENGER SYSTEM
+========================================================= */
+
+const MESSENGERS = [
+
+    {
+        id: "eitaa",
+
+        name: "ایتا",
+
+        className:
+            "messenger-eitaa"
+    },
+
+
+    {
+        id: "rubika",
+
+        name: "روبیکا",
+
+        className:
+            "messenger-rubika"
+    },
+
+
+    {
+        id: "bale",
+
+        name: "بله",
+
+        className:
+            "messenger-bale"
+    }
+
+];
+
+
+/*
+   پیام‌رسان فعلی
+*/
+
+let selectedMessengerId = null;
+
+
+/*
+   گرفتن عناصر
+*/
+
+const messengerButton =
+    document.getElementById(
+        "messengerButton"
+    );
+
+
+const messengerName =
+    document.getElementById(
+        "messengerName"
+    );
+
+
+/*
+   اعمال پیام‌رسان
+*/
+
+function applyMessenger(
+    messenger
+) {
+
+    if (!messenger) {
+
+        return;
+
+    }
+
+
+    messengerButton.classList.remove(
+
+        "messenger-eitaa",
+
+        "messenger-rubika",
+
+        "messenger-bale"
+
+    );
+
+
+    messengerButton.classList.add(
+        messenger.className
+    );
+
+
+    messengerName.textContent =
+        messenger.name;
+
+
+    selectedMessengerId =
+        messenger.id;
+
+}
+
+
+/*
+   انتخاب اولیه پیام‌رسان
+*/
+
+function initializeMessenger() {
+
+    const randomIndex =
+        Math.floor(
+            Math.random() *
+            MESSENGERS.length
+        );
+
+
+    applyMessenger(
+        MESSENGERS[
+            randomIndex
+        ]
+    );
+
+}
+
+
+initializeMessenger();
+
+
+/* =========================================================
+   WARNING SOUND
+========================================================= */
+
+let warningAudioContext = null;
+
+
+function getWarningAudioContext() {
+
+    try {
+
+        if (!warningAudioContext) {
+
+            const AudioContext =
+                window.AudioContext ||
+                window.webkitAudioContext;
+
+
+            if (!AudioContext) {
+
+                return null;
+
+            }
+
+
+            warningAudioContext =
+                new AudioContext();
+
+        }
+
+
+        if (
+            warningAudioContext.state ===
+            "suspended"
+        ) {
+
+            warningAudioContext.resume();
+
+        }
+
+
+        return warningAudioContext;
+
+    } catch (error) {
+
+        return null;
+
+    }
+
+}
+
+
+/*
+   صدای کوتاه اخطار
+*/
+
+function playWarningSound() {
+
+    const ctx =
+        getWarningAudioContext();
+
+
+    if (!ctx) {
+
+        return;
+
+    }
+
+
+    const now =
+        ctx.currentTime;
+
+
+    const oscillator =
+        ctx.createOscillator();
+
+
+    const gain =
+        ctx.createGain();
+
+
+    oscillator.type =
+        "square";
+
+
+    oscillator.frequency.setValueAtTime(
+        430,
+        now
+    );
+
+
+    oscillator.frequency.setValueAtTime(
+        330,
+        now + 0.055
+    );
+
+
+    gain.gain.setValueAtTime(
+        0.0001,
+        now
+    );
+
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.075,
+        now + 0.006
+    );
+
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.0001,
+        now + 0.13
+    );
+
+
+    oscillator.connect(
+        gain
+    );
+
+
+    gain.connect(
+        ctx.destination
+    );
+
+
+    oscillator.start(
+        now
+    );
+
+
+    oscillator.stop(
+        now + 0.135
+    );
+
+}
+
+
+/* =========================================================
+   تغییر پیام‌رسان
+========================================================= */
+
+function changeMessengerRandomly() {
+
+    const otherMessengers =
+        MESSENGERS.filter(
+            function(messenger) {
+
+                return (
+                    messenger.id !==
+                    selectedMessengerId
+                );
+
+            }
+        );
+
+
+    const randomIndex =
+        Math.floor(
+            Math.random() *
+            otherMessengers.length
+        );
+
+
+    const nextMessenger =
+        otherMessengers[
+            randomIndex
+        ];
+
+
+    applyMessenger(
+        nextMessenger
+    );
+
+}
+
+
+/* =========================================================
+   CLICK روی پیام‌رسان
+========================================================= */
+
+messengerButton.addEventListener(
+    "click",
+    function(event) {
+
+        event.preventDefault();
+
+
+        /*
+           صدای اخطار
+        */
+
+        playWarningSound();
+
+
+        /*
+           تغییر رنگ و نام
+        */
+
+        changeMessengerRandomly();
+
+    }
+);
+
+
+/* =========================================================
+   WHATSAPP SETTINGS
+========================================================= */
+
+const CONTACT_SETTINGS = {
+
+    whatsappNumber:
+        "989303833007",
+
+    whatsappMessage:
+        "سلام،\nمن از اینستاگرام برای صدور شناسنامه پیام دادم.لطفا راهنمایی بفرمایید"
+
+};
+
+
+/* =========================================================
+   WHATSAPP LINK
+========================================================= */
+
+const whatsappButton =
+    document.getElementById(
+        "whatsappButton"
+    );
+
+
+whatsappButton.href =
+    "https://wa.me/" +
+    CONTACT_SETTINGS.whatsappNumber +
+    "?text=" +
+    encodeURIComponent(
+        CONTACT_SETTINGS.whatsappMessage
+    );
+
+
+/* =========================================================
+   WHATSAPP SUCCESS SOUND
+========================================================= */
+
+let whatsappAudioContext = null;
+
+
+function getWhatsappAudioContext() {
+
+    try {
+
+        if (!whatsappAudioContext) {
+
+            const AudioContext =
+                window.AudioContext ||
+                window.webkitAudioContext;
+
+
+            if (!AudioContext) {
+
+                return null;
+
+            }
+
+
+            whatsappAudioContext =
+                new AudioContext();
+
+        }
+
+
+        if (
+            whatsappAudioContext.state ===
+            "suspended"
+        ) {
+
+            whatsappAudioContext.resume();
+
+        }
+
+
+        return whatsappAudioContext;
+
+    } catch (error) {
+
+        return null;
+
+    }
+
+}
+
+
+/*
+   صدای کوتاه موفقیت
+   دو نت کوتاه و صعودی
+*/
+
+function playWhatsappSuccessSound() {
+
+    const ctx =
+        getWhatsappAudioContext();
+
+
+    if (!ctx) {
+
+        return;
+
+    }
+
+
+    const now =
+        ctx.currentTime;
+
+
+    /*
+       نت اول
+    */
+
+    const oscillator1 =
+        ctx.createOscillator();
+
+
+    const gain1 =
+        ctx.createGain();
+
+
+    oscillator1.type =
+        "sine";
+
+
+    oscillator1.frequency.setValueAtTime(
+        660,
+        now
+    );
+
+
+    gain1.gain.setValueAtTime(
+        0.0001,
+        now
+    );
+
+
+    gain1.gain.exponentialRampToValueAtTime(
+        0.09,
+        now + 0.006
+    );
+
+
+    gain1.gain.exponentialRampToValueAtTime(
+        0.0001,
+        now + 0.065
+    );
+
+
+    oscillator1.connect(
+        gain1
+    );
+
+
+    gain1.connect(
+        ctx.destination
+    );
+
+
+    oscillator1.start(
+        now
+    );
+
+
+    oscillator1.stop(
+        now + 0.07
+    );
+
+
+    /*
+       نت دوم
+    */
+
+    const oscillator2 =
+        ctx.createOscillator();
+
+
+    const gain2 =
+        ctx.createGain();
+
+
+    oscillator2.type =
+        "sine";
+
+
+    oscillator2.frequency.setValueAtTime(
+        880,
+        now + 0.055
+    );
+
+
+    gain2.gain.setValueAtTime(
+        0.0001,
+        now + 0.055
+    );
+
+
+    gain2.gain.exponentialRampToValueAtTime(
+        0.10,
+        now + 0.062
+    );
+
+
+    gain2.gain.exponentialRampToValueAtTime(
+        0.0001,
+        now + 0.14
+    );
+
+
+    oscillator2.connect(
+        gain2
+    );
+
+
+    gain2.connect(
+        ctx.destination
+    );
+
+
+    oscillator2.start(
+        now + 0.055
+    );
+
+
+    oscillator2.stop(
+        now + 0.145
+    );
+
+}
+
+
+/* =========================================================
+   WHATSAPP TOUCH
+========================================================= */
+
+whatsappButton.addEventListener(
+    "pointerdown",
+    playWhatsappSuccessSound,
+    {
+        passive: true
+    }
+);
+
+
+/* =========================================================
+   REFRESH WITHOUT SCROLL
+========================================================= */
+
+let touchStartY = 0;
+
+let touchStartX = 0;
+
+let refreshing = false;
+
+
+document.addEventListener(
+    "touchstart",
+    function(event) {
+
+        if (
+            event.touches &&
+            event.touches.length === 1
+        ) {
+
+            touchStartY =
+                event.touches[0].clientY;
+
+
+            touchStartX =
+                event.touches[0].clientX;
+
+        }
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+document.addEventListener(
+    "touchend",
+    function(event) {
+
+        if (refreshing) {
+
+            return;
+
+        }
+
+
+        if (
+            !event.changedTouches ||
+            event.changedTouches.length !== 1
+        ) {
+
+            return;
+
+        }
+
+
+        const endY =
+            event.changedTouches[0].clientY;
+
+
+        const endX =
+            event.changedTouches[0].clientX;
+
+
+        const distanceY =
+            endY - touchStartY;
+
+
+        const distanceX =
+            Math.abs(
+                endX - touchStartX
+            );
+
+
+        if (
+            touchStartY < 90 &&
+            distanceY > 95 &&
+            distanceY >
+            distanceX * 1.4
+        ) {
+
+            refreshing = true;
+
+
+            window.location.reload();
+
+        }
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+</script>
+
+</body>
+
+  </html>
